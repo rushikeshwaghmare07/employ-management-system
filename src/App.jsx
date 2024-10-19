@@ -1,10 +1,11 @@
-import './App.css'
+import React from "react"
+import Login from "./components/Auth/Login"
 
 function App() {
 
   return (
     <>
-      <div className='text-3xl text-indigo-500'>Hello</div>
+      <Login />
     </>
   )
 }
