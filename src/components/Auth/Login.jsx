@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const Login = ({handleLogin}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -20,7 +20,8 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
+    handleLogin(email, password);
+    
     if (!validateForm()) return;
 
     console.log("Logging in with email: ", email);
