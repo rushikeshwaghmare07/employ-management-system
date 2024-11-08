@@ -1,53 +1,29 @@
-import React from 'react';
-import TaskCard from './TaskCard';
+import React from "react";
+// import TaskCard from './TaskCard';
+import AcceptTask from "./AcceptTask";
+import NewTask from "./NewTask";
+import CompleteTask from "./CompleteTask";
+import FailedTask from "./FailedTask";
 
-const TaskList = () => {
-  const tasks = [
-    {
-      priority: 'High',
-      date: '22 Oct 2024',
-      title: 'Prepare Quarterly Sales Report',
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
-      bgColor: 'bg-red-400',
-    },
-    {
-      priority: 'High',
-      date: '22 Oct 2024',
-      title: 'Edit a blog post',
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
-      bgColor: 'bg-blue-500',
-    },
-    {
-      priority: 'Medium',
-      date: '23 Oct 2024',
-      title: 'Client Meeting Prep',
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
-      bgColor: 'bg-green-500',
-    },
-    {
-      priority: 'Low',
-      date: '24 Oct 2024',
-      title: 'Team Building Activity',
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
-      bgColor: 'bg-yellow-500',
-    },
-  ];
-
+const TaskList = ({ data }) => {
+  console.log(data);
   return (
-    <div
-      id="taskList"
-      className="flex items-center justify-start gap-5 overflow-x-auto h-[50%] w-full py-5 mt-10"
-    >
-      {tasks.map((task, index) => (
-        <TaskCard
-          key={index}
-          priority={task.priority}
-          date={task.date}
-          title={task.title}
-          description={task.description}
-          bgColor={task.bgColor}
-        />
-      ))}
+    <div id="taskList" className="mt-10 flex overflow-x-auto space-x-6 pb-6">
+      {data.tasks.map((elem, index) => {
+        if (elem.active) {
+          return <AcceptTask key={index} />;
+        }
+        if (elem.newTask) {
+          <NewTask key={index} />;
+        }
+        if (elem.completed) {
+          <CompleteTask key={index} />;
+        }
+        if (elem.failed) {
+          <FailedTask key={index} />;
+        }
+        return null; // To handle any cases that don't match the above conditions
+      })}
     </div>
   );
 };
