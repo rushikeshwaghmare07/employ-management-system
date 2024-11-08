@@ -1,3 +1,5 @@
+// localStorage.clear()
+
 export const employees = [ 
   {
     id: 1,
