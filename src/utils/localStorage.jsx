@@ -1,6 +1,7 @@
-export const employees = [
+export const employees = [ 
   {
     id: 1,
+    firstName: "Arjun",
     email: "employee1@example.com",
     password: "password123",
     tasks: [
@@ -35,9 +36,11 @@ export const employees = [
         failed: false,
       },
     ],
+    taskCount: { active: 2, newTask: 1, completed: 1, failed: 0 },
   },
   {
     id: 2,
+    firstName: "Meera",
     email: "employee2@example.com",
     password: "password456",
     tasks: [
@@ -72,9 +75,11 @@ export const employees = [
         failed: false,
       },
     ],
+    taskCount: { active: 3, newTask: 2, completed: 1, failed: 0 },
   },
   {
     id: 3,
+    firstName: "Rajesh",
     email: "employee3@example.com",
     password: "password789",
     tasks: [
@@ -109,9 +114,11 @@ export const employees = [
         failed: false,
       },
     ],
+    taskCount: { active: 2, newTask: 1, completed: 1, failed: 0 },
   },
   {
     id: 4,
+    firstName: "Lakshmi",
     email: "employee4@example.com",
     password: "password101",
     tasks: [
@@ -146,9 +153,11 @@ export const employees = [
         failed: true,
       },
     ],
+    taskCount: { active: 2, newTask: 1, completed: 1, failed: 1 },
   },
   {
     id: 5,
+    firstName: "Vikram",
     email: "employee5@example.com",
     password: "password102",
     tasks: [
@@ -183,6 +192,7 @@ export const employees = [
         failed: false,
       },
     ],
+    taskCount: { active: 3, newTask: 2, completed: 0, failed: 1 },
   },
 ];
 
