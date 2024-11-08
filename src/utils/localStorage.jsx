@@ -194,32 +194,15 @@ export const admin = [
   },
 ];
 
-// Set employees in localStorage
-export const setEmployeesInLocalStorage = (employees) => {
+
+// Set localStorage
+export const setLocalStorage = () => {
   localStorage.setItem("employees", JSON.stringify(employees));
-};
-
-// Set admin in localStorage
-export const setAdminInLocalStorage = (admin) => {
   localStorage.setItem("admin", JSON.stringify(admin));
-};
+}
 
-// Get employees from localStorage
-export const getEmployeesFromLocalStorage = () => {
-  try {
-    return JSON.parse(localStorage.getItem("employees")) || [];
-  } catch (error) {
-    console.error("Error reading employees from localStorage: ", error);
-    return [];
-  }
-};
-
-// Get admin from localStorage
-export const getAdminFromLocalStorage = () => {
-  try {
-    return JSON.parse(localStorage.getItem("admin")) || {};
-  } catch (error) {
-    console.error("Error reading admin from localStorage:", error);
-    return {};
-  }
-};
+// Get item
+export const getLocalStorage = () => {
+  const employeesData = JSON.parse(localStorage.getItem("employees"));
+  const adminData = JSON.parse(localStorage.getItem("admin"));
+}
