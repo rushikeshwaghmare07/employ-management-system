@@ -6,10 +6,10 @@ const FailedTask = ({ data }) => {
         <h3 className="bg-red-700 text-xs px-2 py-1 rounded">
           {data.category}
         </h3>
-        <h4 className="text-sm">{data.date}</h4>
+        <h4 className="text-sm">{data.taskDate}</h4>
       </div>
-      <h2 className="mt-4 text-xl font-semibold">{data.title}</h2>
-      <p className="text-sm mt-2">{data.description}</p>
+      <h2 className="mt-4 text-xl font-semibold">{data.taskTitle}</h2>
+      <p className="text-sm mt-2">{data.taskDescription}</p>
       <div className="mt-4">
         <button className="w-full bg-white text-yellow-600 py-2 rounded-md hover:bg-yellow-100 transition">
           Failed
